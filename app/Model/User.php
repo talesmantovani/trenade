@@ -3,7 +3,43 @@
 	class User extends AppModel{
 
 		public $validate = array(
-			'username' => array(
+			'rd' => array(
+		        'required' => array(
+		        	'rule' => array('notEmpty'),
+		        	'message' => 'Digite o registro!'
+	       		),
+	       		'numeric' => array(
+	       			'rule' => 'numeric',
+	       			'message' => 'Apenas números são permitidos'
+	       		)
+	    	),
+
+	    	'name' => array(
+		        'required' => array(
+		        	'rule' => array('notEmpty'),
+		        	'message' => 'Digite o nome!'
+	       		),
+	       		'alphanumeric' => array(
+	       			'rule' => 'alphaNumeric',
+	       			'message' => 'Somente letras e números.'
+	       		)
+	    	),
+
+	    	'email' => array(
+		        'required' => array(
+		        	'rule' => array('notEmpty'),
+		        	'message' => 'Digite o email!'
+	       		)
+	    	),
+
+	    	'confirm_password' => array(
+		        'required' => array(
+		        	'rule' => array('notEmpty'),
+		        	'message' => 'Digite a confirmação da senha!'
+	       		)
+	    	),
+
+	    	'admin' => array(
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o registro!'
