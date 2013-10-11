@@ -30,7 +30,11 @@ class UserTest extends CakeTestCase {
 		$this->assertFalse($this->User->validates());
 	}
 
-
+	public function testPasswordsShouldBeEquals() {
+		$senhas = array('password' => '333', 'confirm_password'=> '3333');
+		$this->User->set(array('User' => $senhas));
+		$this->assertFalse($this->User->matchPasswords());
+	}
 
 
 }

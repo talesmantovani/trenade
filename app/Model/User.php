@@ -62,5 +62,10 @@
 	        return true;
     	}
 
+    	public function matchPasswords() {
+    		$senhas = $this->data['User'];
+        	return ($senhas['password'] == $senhas['confirm_password']);
+    	}
+
 	}
 ?>
