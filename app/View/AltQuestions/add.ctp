@@ -9,7 +9,7 @@
 	 				'area' => 'Por área',
 	 				'especifica' => 'Por curso:');
 	$attributes = array('legend' => false);
-	echo $this->Form->radio('answerA', $options, $attributes);
+	echo $this->Form->radio('categoria', $options, $attributes);
 	echo $this->Form->end(__("Salvar"));
 
 
