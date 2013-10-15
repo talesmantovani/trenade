@@ -1,6 +1,5 @@
 <?php
-	class TextQuestion extends AppModel{
-
+	class TextQuestion extends AppModell{
+		
 	}
-
 ?>
