@@ -7,10 +7,6 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o registro!'
-	       		),
-	       		'numeric' => array(
-	       			'rule' => 'numeric',
-	       			'message' => 'Apenas números são permitidos'
 	       		)
 	    	),
 
@@ -36,13 +32,6 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite a confirmação da senha!'
-	       		)
-	    	),
-
-	    	'admin' => array(
-		        'required' => array(
-		        	'rule' => array('notEmpty'),
-		        	'message' => 'Digite o registro!'
 	       		)
 	    	),
 		    

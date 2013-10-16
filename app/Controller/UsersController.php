@@ -5,6 +5,15 @@
 
 		}
 
+        public function login(){
+            if ($this->Auth->login()) {
+                $this->redirect($this->Auth->redirect());
+            } else {
+                $this->Session->setFlash(__('<script> alert("Usuário ou senha inválidos."); </script>', true));
+                $this->request->data = null;
+            }
+        }
+
 		public function add() {
         if ($this->request->is('post')) {
             $this->User->create();

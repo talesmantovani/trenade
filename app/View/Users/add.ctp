@@ -11,14 +11,6 @@
 		'label' => 'Senha: '));
 	echo $this->Form->input('confirm_password', array(
 		'label'=>'Confirmação da senha', 'type' => 'password'));
-	echo $this->Form->input('admin', array(
-		'label' => '',
-		'value' => 'Professor',
-		'type' => 'Radio'));
-	echo $this->Form->input('admin', array(
-		'label' => '',
-		'value' => 'Coordenador',
-		'type' => 'Radio'));
 	echo $this->Form->end(__("Salvar"));
 
 ?>
