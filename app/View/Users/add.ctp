@@ -3,8 +3,8 @@
 	echo $this->Form->create('User');
 	echo $this->Form->input('name', array(
 		'label' => 'Nome do professor: '));
-	echo $this->Form->input('rd', array(
-		'label' => 'Registro do professor: '));
+	echo $this->Form->input('username', array(
+		'label' => 'Registro do professor: ', 'type' => 'text'));
 	echo $this->Form->input('email', array(
 		'label' => 'E-mail: '));
 	echo $this->Form->input('password', array(
