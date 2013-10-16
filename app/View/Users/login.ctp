@@ -1,13 +1,13 @@
-<div class="container" align="center">
+<h1>Autenticação</h1>
 <?php echo $this->Session->flash('auth'); ?>
 <?php echo $this->Form->create('User');?>
-    <fieldset>
-        <legend><?php echo __('Tela de Autenticação'); ?></legend>
-        <?php echo $this->Form->input('username', array(
-    	'label' => 'Registro Docente:'));
-        echo $this->Form->input('password', array(
-    	'label' => 'Senha:'));
-    ?>
-    </fieldset>
-<?php echo $this->Form->end(__('Entrar'));?>
-</div>
+	<fieldset>
+		<?php 
+		echo $this->Form->input('username', array(
+			'label' => 'Registro Docente: ',
+			'type' => 'text'));
+		echo $this->Form->input('password', array(
+		  	'label' => 'Senha: '));
+		?>
+	</fieldset>
+<?php echo $this->Form->end(__('Entrar')); ?>
