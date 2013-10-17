@@ -21,12 +21,12 @@ class UserTest extends CakeTestCase {
 	}
 
 	public function testRdCannotBeEmpty() {
-		$this->User->set(array('User' => array('rd' => '')));
+		$this->User->set(array('User' => array('username' => '')));
 		$this->assertFalse($this->User->validates());
 	}
 
 	public function testRdCannotHasLetter() {
-		$this->User->set(array('User' => array('rd' => 'ed')));
+		$this->User->set(array('User' => array('username' => 'ed')));
 		$this->assertFalse($this->User->validates());
 	}
 
