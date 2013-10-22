@@ -10,10 +10,10 @@ class AppSchema extends CakeSchema {
 
 	public $alt_questions = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
-		'teacher' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 10, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+		'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'question_text' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'area_question' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'course_question' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'area_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'course_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'general_question' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
 		'answerA' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answerB' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
@@ -57,10 +57,11 @@ class AppSchema extends CakeSchema {
 
 	public $text_questions = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
-		'teacher' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 10, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+		'user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'category_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'area_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'course_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'question_text' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'area_question' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'course_question' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'general_question' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
 		'answer' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
