@@ -12,5 +12,4 @@
 	echo $this->Form->input('answerE', array('label' => 'E): '));
 	echo $this->Form->input('answer_id', array('label' => 'Resposta correta: '));
 	echo $this->Form->end(__('Salvar'));
-    
 ?>
