@@ -15,17 +15,23 @@ class AppSchema extends CakeSchema {
 		'question_text' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'area_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'course_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'general_question' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
+		'answer_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'answerA' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answerB' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answerC' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answerD' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answerE' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'rightA' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
-		'rightB' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
-		'rightC' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
-		'rightD' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
-		'rightE' => array('type' => 'integer', 'null' => true, 'default' => null, 'length' => 4),
+		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+		'indexes' => array(
+			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+		),
+		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+
+	public $answers = array(
+		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
+		'name' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 5, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
@@ -37,7 +43,6 @@ class AppSchema extends CakeSchema {
 	public $areas = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 10, 'key' => 'primary'),
 		'name' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 50, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'category_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
