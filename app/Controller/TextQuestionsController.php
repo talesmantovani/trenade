@@ -38,6 +38,10 @@ class TextQuestionsController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
+        $this->set('areas', array('[Selecione]') + $this->TextQuestion->Area->find('list'));
+        $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
+
 		if ($this->request->is('post')) {
 			$this->TextQuestion->create();
 			if ($this->TextQuestion->save($this->request->data)) {
@@ -47,8 +51,6 @@ class TextQuestionsController extends AppController {
 				$this->Session->setFlash(__('The text question could not be saved. Please, try again.'));
 			}
 		}
-		$categories = $this->TextQuestion->Category->find('list');
-		$this->set(compact('categories'));
 	}
 
 /**

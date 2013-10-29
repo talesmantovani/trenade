@@ -3,13 +3,11 @@
 	<fieldset>
 		<legend><?php echo __('Add Text Question'); ?></legend>
 	<?php
-		echo $this->Form->input('user_id');
 		echo $this->Form->input('category_id');
 		echo $this->Form->input('area_id');
 		echo $this->Form->input('course_id');
 		echo $this->Form->input('question_text');
-		echo $this->Form->input('general_question');
-		echo $this->Form->input('answer');
+		echo $this->Form->input('answer_text');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

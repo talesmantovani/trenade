@@ -12027,3 +12027,69 @@ Stack Trace:
 #12 /home/webgoal1/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AltQuestionsController), Object(CakeRequest), Object(CakeResponse))
 #13 /home/webgoal1/ProjetoPHP/www/trenade/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #14 {main}
+2013-10-29 16:35:01 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/webgoal2/ProjetoPHP/www/trenade/app/Controller/TextQuestionsController.php, line 41]
+2013-10-29 16:35:01 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /trenade/text_questions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/webgoal2/...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/webgoal2/...', 41, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/webgoal2/...', 41, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-29 16:35:02 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/webgoal2/ProjetoPHP/www/trenade/app/Controller/TextQuestionsController.php, line 41]
+2013-10-29 16:35:02 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /trenade/text_questions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/webgoal2/...', 41)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/webgoal2/...', 41, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/webgoal2/...', 41, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-29 16:35:15 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/webgoal2/ProjetoPHP/www/trenade/app/Controller/TextQuestionsController.php, line 44]
+2013-10-29 16:35:15 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /trenade/text_questions/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/webgoal2/...', 44)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/webgoal2/...', 44, Array)
+#2 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/webgoal2/...', 44, Array)
+#3 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-29 16:37:52 Error: [MissingViewException] View file "/home/webgoal2/ProjetoPHP/www/trenade/app/View/Categories/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/webgoal2/ProjetoPHP/www/trenade/app/View/Categories/add.ctp',
+)
+Request URL: /trenade/categories/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CategoriesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/webgoal2/ProjetoPHP/www/trenade/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-29 16:37:59 Error: [MissingViewException] View file "/home/webgoal2/ProjetoPHP/www/trenade/app/View/Categories/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/webgoal2/ProjetoPHP/www/trenade/app/View/Categories/add.ctp',
+)
+Request URL: /trenade/categories/add
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CategoriesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/webgoal2/ProjetoPHP/www/trenade/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-29 16:38:41 Error: [MissingViewException] View file "/home/webgoal2/ProjetoPHP/www/trenade/app/View/Categories/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/home/webgoal2/ProjetoPHP/www/trenade/app/View/Categories/index.ctp',
+)
+Request URL: /trenade/categories
+Stack Trace:
+#0 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /home/webgoal2/ProjetoPHP/www/trenade/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CategoriesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/webgoal2/ProjetoPHP/www/trenade/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
