@@ -60,7 +60,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'webgoal',
+		'password' => 'mysql',
 		'database' => 'trenade',
 		'prefix' => '',
 		//'encoding' => 'utf8',
