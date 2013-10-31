@@ -40,6 +40,8 @@
 		'label' => 'Resposta correta: '));
 
 	echo $this->Form->end(__('Salvar'));
+
+	echo $this->Html->link(__('Editar Questões Dissertativas'), array('action' => 'edit'));
 ?>
 
 <script>

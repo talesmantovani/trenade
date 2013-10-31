@@ -2,12 +2,22 @@
 	class AltQuestionsController extends AppController{
 
         public function index(){
+            $this->AltQuestion->recursive = 0;
+            $this->set('AltQuestions', $this->paginate());
+
+            $users = $this->AltQuestion->find('all', 
+                    array(
+                        'conditions' => array(
+                            'AltQuestion.user_id' => $this->Auth->user('id'),
+                            ),
+                        'order' => array('AltQuestion.id asc')
+                        ));
+                
+            $this->set(compact(array('users')));
 
         }
 
 		public function add() {
-            //pr($this->AltQuestion->Category->find('list'));
-            //exit;
 
         $this->set('categories', array('[Selecione]') + $this->AltQuestion->Category->find('list'));
         $this->set('areas', array('[Selecione]') + $this->AltQuestion->Area->find('list'));
@@ -15,7 +25,8 @@
         $this->set('answers', array('[Selecione]') + $this->AltQuestion->Answer->find('list'));
 
 			if ($this->request->is('post')) {
-            $this->AltQuestion->create();
+            //$this->AltQuestion->create();
+                $this->request->data['AltQuestion']['user_id'] = $this->Auth->user('id');
                 if ($this->AltQuestion->save($this->request->data)) {
                     $this->Session->setFlash(__('<script> alert("sucesso!"); </script>', true));
                     $this->redirect(array('action' => 'add'));
@@ -24,28 +35,19 @@
                 }
             }
 
-		}
-    
-    /*function dynamic_element($category_id){
-        //$dom = new DomDocument;
-        if($category_id == 1){
-            $dom
-        }
-    }
-    <script>  
-    $( "#drop_category" ).change(function() {
-        if($("#drop_category").val() == 1){
-            $("#idDropDownOculto").css('display', 'block');
+		}  
+
+    public function edit($id=null) {
+        $this->AltQuestion->id = $id;
+        if (empty($this->data)) {
+            $this->data = $this->AltQuestion->find('first', array('conditions' => array('id' => $id)));
+        
         }
         else{
-            $("#idDropDownOculto").css('display', 'none');
+                $this->User->save($this->data);
+                $this->redirect('index');
         }
 
-    });
-    </script>*/
-              
-    
-             
-
 	}
+}
 ?>

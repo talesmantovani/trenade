@@ -1,29 +1,25 @@
 <?php
 App::uses('AppController', 'Controller');
-/**
- * TextQuestions Controller
- *
- * @property TextQuestion $TextQuestion
- */
+
 class TextQuestionsController extends AppController {
 
-/**
- * index method
- *
- * @return void
- */
+	public $uses = array('User', 'TextQuestion');
+
 	public function index() {
 		$this->TextQuestion->recursive = 0;
 		$this->set('textQuestions', $this->paginate());
+
+		$users = $this->TextQuestion->find('all', 
+                array(
+                    'conditions' => array(
+                        'TextQuestion.user_id' => $this->Auth->user('id'),
+                        ),
+                    'order' => array('TextQuestion.id asc')
+                    ));
+            
+		$this->set(compact(array('users')));
 	}
 
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function view($id = null) {
 		if (!$this->TextQuestion->exists($id)) {
 			throw new NotFoundException(__('Invalid text question'));
@@ -32,18 +28,14 @@ class TextQuestionsController extends AppController {
 		$this->set('textQuestion', $this->TextQuestion->find('first', $options));
 	}
 
-/**
- * add method
- *
- * @return void
- */
 	public function add() {
 		$this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
         $this->set('areas', array('[Selecione]') + $this->TextQuestion->Area->find('list'));
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
 
 		if ($this->request->is('post')) {
-			$this->TextQuestion->create();
+			//$this->TextQuestion->create();
+			$this->request->data['TextQuestion']['user_id'] = $this->Auth->user('id');
 			if ($this->TextQuestion->save($this->request->data)) {
 				$this->Session->setFlash(__('<script> alert("Questão salva com sucesso!."); </script>', true));
 				$this->redirect(array('action' => 'add'));
@@ -51,20 +43,23 @@ class TextQuestionsController extends AppController {
 				$this->Session->setFlash(__('<script> alert("Não pode ser salvo."); </script>', true));
 			}
 		}
+
+		
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		if (!$this->TextQuestion->exists($id)) {
-			throw new NotFoundException(__('Invalid text question'));
-		}
-		if ($this->request->is('post') || $this->request->is('put')) {
+	public function edit($id=null) {
+		$this->TextQuestion->id = $id;
+		 if (empty($this->data)) {
+            $this->data = $this->TextQuestion->find('first', array('conditions' => array('id' => $id)));
+            
+        }
+        else{
+                $this->TextQuestion->save($this->data);
+                $this->redirect('index');
+        }
+      
+    }
+		/*if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->TextQuestion->save($this->request->data)) {
 				$this->Session->setFlash(__('The text question has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -75,17 +70,10 @@ class TextQuestionsController extends AppController {
 			$options = array('conditions' => array('TextQuestion.' . $this->TextQuestion->primaryKey => $id));
 			$this->request->data = $this->TextQuestion->find('first', $options);
 		}
-		$categories = $this->TextQuestion->Category->find('list');
-		$this->set(compact('categories'));
-	}
+		$this->set('categories', array('[Selecione]') + $this->TextQuestion->Category->find('list'));
+        $this->set('areas', array('[Selecione]') + $this->TextQuestion->Area->find('list'));
+        $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));*/
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
 	public function delete($id = null) {
 		$this->TextQuestion->id = $id;
 		if (!$this->TextQuestion->exists()) {
