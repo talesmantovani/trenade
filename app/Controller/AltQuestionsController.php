@@ -28,10 +28,10 @@
             //$this->AltQuestion->create();
                 $this->request->data['AltQuestion']['user_id'] = $this->Auth->user('id');
                 if ($this->AltQuestion->save($this->request->data)) {
-                    $this->Session->setFlash(__('<script> alert("sucesso!"); </script>', true));
+                    $this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso!"); </script>', true));
                     $this->redirect(array('action' => 'add'));
                 } else {
-                   $this->Session->setFlash(__('<script> alert("não pode ser salvo."); </script>', true));
+                   $this->Session->setFlash(__('<script> alert("Não pode ser salvo"); </script>',true));
                 }
             }
 
@@ -39,15 +39,28 @@
 
     public function edit($id=null) {
         $this->AltQuestion->id = $id;
-        if (empty($this->data)) {
-            $this->data = $this->AltQuestion->find('first', array('conditions' => array('id' => $id)));
-        
+        $this->set('categories', array('[Selecione]') + $this->AltQuestion->Category->find('list'));
+        $this->set('areas', array('[Selecione]') + $this->AltQuestion->Area->find('list'));
+        $this->set('courses', array('[Selecione]') + $this->AltQuestion->Course->find('list'));
+
+        if($this->request->isPost()) {
+            if ($this->AltQuestion->save($this->request->data)) {
+                $this->Session->setFlash('<script> alert("Questão editada com sucesso!"); </script>', true);
+                $this->redirect(array('action' => 'index', $this->AltQuestion->id));
+            }
         }
         else{
-                $this->User->save($this->data);
-                $this->redirect('index');
+            $this->request->data = $this->AltQuestion->read();
         }
 
-	}
+    }
+
+    public function delete ($id){
+        $this->AltQuestion->delete($id);
+        $this->redirect(array(
+            'controller' => 'users', 
+            'action' => 'index'));
+
+    }
 }
 ?>

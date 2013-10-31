@@ -1,5 +1,4 @@
 <?php echo $this->Form->create('AltQuestion', array('action' => 'edit')); ?>
-<?php echo $this->Form->hidden('id'); ?>
 	<fieldset>
 		<legend><?php echo __('Editar Questões Alternativas'); ?></legend>
 	<?php
@@ -12,6 +11,26 @@
 		echo $this->Form->input('answerC');
 		echo $this->Form->input('answerD');
 		echo $this->Form->input('answerE');
+		echo $this->Form->input('answer_id');
+
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Salvar')); ?>
+
+<script>
+function check() {
+	if (category_id.selectedIndex==2) {
+		document.getElementById('area_id').disabled = false;
+		document.getElementById('course_id').disabled = true;
+		
+	}
+	else if (category_id.selectedIndex==3) {
+		document.getElementById('area_id').disabled = true;
+		document.getElementById('course_id').disabled = false;
+	}
+	else {
+		document.getElementById('area_id').disabled = true;
+		document.getElementById('course_id').disabled = true;
+	}
+}
+</script>
