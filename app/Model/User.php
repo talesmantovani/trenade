@@ -36,7 +36,11 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite a confirmação da senha!'
-	       		)
+	       		),
+	       		'Match passwords'=>array(
+	                'rule' => 'matchPasswords',
+	                'message' => 'Senha/Confirmação da Senha não são iguais'
+            	)
 	    	),
 		    
 		    'password' => array(

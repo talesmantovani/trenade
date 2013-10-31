@@ -1,23 +1,22 @@
 <?php
-App::uses('AppModel', 'Model');
-/**
- * TextQuestion Model
- *
- * @property User $User
- * @property Category $Category
- * @property Area $Area
- * @property Course $Course
- */
+App::uses('AppModel', 'Model', 'Controller/Component');
 class TextQuestion extends AppModel {
 
+	public $validates = array(
+			'question_text' => array(
+		        'required' => array(
+		        	'rule' => array('notEmpty'),
+		        	'message' => 'Digite o registro!'
+	       		)	
+			),
+			'answer_text' => array(
+				'required' => array(
+					'rule' => 'notEmpty',
+					'message' => 'Insira uma resposta para a questão!'
+				)
+			)
+		);
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * belongsTo associations
- *
- * @var array
- */
 	public $belongsTo = array(
 		'User' => array(
 			'className' => 'User',
@@ -48,4 +47,7 @@ class TextQuestion extends AppModel {
 			'order' => ''
 		)
 	);
+
+
+			
 }

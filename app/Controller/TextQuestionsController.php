@@ -45,10 +45,10 @@ class TextQuestionsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->TextQuestion->create();
 			if ($this->TextQuestion->save($this->request->data)) {
-				$this->Session->setFlash(__('The text question has been saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('<script> alert("Questão salva com sucesso!."); </script>', true));
+				$this->redirect(array('action' => 'add'));
 			} else {
-				$this->Session->setFlash(__('The text question could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('<script> alert("Não pode ser salvo."); </script>', true));
 			}
 		}
 	}
