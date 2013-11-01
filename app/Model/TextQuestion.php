@@ -2,9 +2,6 @@
 App::uses('AppModel', 'Model', 'Controller/Component');
 class TextQuestion extends AppModel {
 
-	/*public $belongsTo = array('Category', 'Area', 'Course');
-	public $hasMany = array('Answer');*/
-
 
 	public $validates = array(
 			'question_text' => array(
