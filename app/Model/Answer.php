@@ -1,5 +1,5 @@
 <?php
 	class Answer extends AppModel{
-		public $belongsTo = array('AltQuestions');
+		public $belongsTo = array('AltQuestion', 'TextQuestion');
 	}
 ?>

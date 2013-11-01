@@ -1,8 +1,39 @@
 <?php
 	class AltQuestion extends AppModel{
-		
-		public $belongsTo = array('Category', 'Area', 'Course');
-		public $hasMany = array('Answer');
+	
+		//public $belongsTo = array('Category', 'Area', 'Course');
+		//public $hasMany = array('Answer');
+
+		public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Category' => array(
+			'className' => 'Category',
+			'foreignKey' => 'category_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Area' => array(
+			'className' => 'Area',
+			'foreignKey' => 'area_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Course' => array(
+			'className' => 'Course',
+			'foreignKey' => 'course_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 
 		public $validate = array(
 			'question_text' => array(
