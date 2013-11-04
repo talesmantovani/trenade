@@ -1,5 +1,8 @@
 <div class="textQuestions form">
-<?php echo $this->Form->create('TextQuestion'); ?>
+<?php 
+	echo $this->Form->create('TextQuestion'); 
+	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));
+?>
 	<fieldset>
 		<h1>Cadastro de Questões Dissertativas</h1>
 	<?php
@@ -25,7 +28,9 @@
 			'label' => 'Resposta: '));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Salvar')); ?>
+<?php 
+	echo $this->Form->end(__('Salvar')); 
+?>
 
 <script>
 function check() {

@@ -17,5 +17,8 @@
 
 		</tr>
 	<?php endforeach; ?>
+<?php
+	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));
+?>
 	
 </table>

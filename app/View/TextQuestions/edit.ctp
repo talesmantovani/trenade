@@ -1,5 +1,8 @@
 <div class="textQuestions form">
-<?php echo $this->Form->create('TextQuestion', array('action' => 'edit')); ?>
+<?php 
+	echo $this->Form->create('TextQuestion', array('action' => 'edit')); 
+	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));
+?>
 	<fieldset>
 		<legend><?php echo __('Editar Questões Dissertativas'); ?></legend>
 	<?php
@@ -25,7 +28,9 @@
 			'label' => 'Resposta: '));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Salvar')); ?>
+<?php 
+	echo $this->Form->end(__('Salvar')); 
+?>
 </div>
 
 <script>
