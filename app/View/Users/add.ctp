@@ -13,4 +13,6 @@
 		'label'=>'Confirmação da senha', 'type' => 'password'));
 	echo $this->Form->end(__("Salvar"));
 
+
+	echo $this->Html->link(__('Voltar para menu'), array('action' => 'index'));
 ?>

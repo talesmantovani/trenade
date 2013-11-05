@@ -1,5 +1,10 @@
+<?php
+	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));
+?>
+
 <h1>Cadastro de Questões Alternativas</h1>
-<?php 
+<?php
+
 	echo $this->Form->create('AltQuestion', array(
 		'action' => 'add'));
 	

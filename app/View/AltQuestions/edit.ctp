@@ -1,5 +1,7 @@
-<div class="altQuestions form">
-<?php echo $this->Form->create('AltQuestion', array('action' => 'edit')); ?>
+<?php 
+	echo $this->Form->create('AltQuestion', array('action' => 'edit')); 
+	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));	
+?>
 	<fieldset>
 		<legend><?php echo __('Editar Questões Alternativas'); ?></legend>
 	<?php
@@ -41,5 +43,6 @@
 
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Salvar')); ?>
-</div>
+<?php 
+	echo $this->Form->end(__('Salvar')); 
+?>
