@@ -26,21 +26,3 @@
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Salvar')); ?>
-
-<script>
-function check() {
-	if (category_id.selectedIndex==2) {
-		document.getElementById('area_id').disabled = false;
-		document.getElementById('course_id').disabled = true;
-		
-	}
-	else if (category_id.selectedIndex==3) {
-		document.getElementById('area_id').disabled = true;
-		document.getElementById('course_id').disabled = false;
-	}
-	else {
-		document.getElementById('area_id').disabled = true;
-		document.getElementById('course_id').disabled = true;
-	}
-}
-</script>
