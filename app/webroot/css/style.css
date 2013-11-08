@@ -1,0 +1,55 @@
+.wrap{
+ padding-left: 300px;
+}
+
+.sidebar{
+ padding-left: -300px;
+}
+
+.menu{
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ background-color:#3cad56;
+ width: 100px;
+ padding-left: -100px;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu li a.icon-alternativas{
+	background: url("../img/icon-alternativas.png") no-repeat;
+	width: 33px;
+	height: 30px;
+	display: block;
+	text-indent: -9000000px;
+}
+
+.menu li a.icon-dissertativas{
+	background: url("../img/icon-dissertativas.png") no-repeat;
+	width: 33px;
+	height: 35px;
+	display: block;
+	text-indent: -9000000px;
+}
+
+.submenu{
+ padding-top: 30px;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ background-color:#e0e2e4;
+ width: 200px;
+ margin-left: 100px;
+}
+
+.content{
+	width: 100%;
+	background-color: blue;
+}
