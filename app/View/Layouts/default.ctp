@@ -23,6 +23,10 @@
 					<li><a class="icon-alternativas" href="">Questões alternativas</a></li>
 					<li><a class="icon-dissertativas" href="">Questões dissertativas</a></li>
 				</ul>
+				<?php echo $this->Html->link(__('Logout'), array(
+					'controller' => 'Users', 'action' => 'logout'),
+					array('id' => 'icon-logout'));
+				?>
 			</div>
 			<div class="submenu">
 			<ul class="lista">
