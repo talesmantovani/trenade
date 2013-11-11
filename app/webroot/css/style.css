@@ -1,12 +1,12 @@
-.wrap{
+.wrap {
  	padding-left: 300px;
 }
 
-.sidebar{
+.sidebar {
  	padding-left: -300px;
 }
 
-.menu{
+.menu {
 	height: 100%;
 	position: fixed;
 	top: 0;
@@ -16,7 +16,7 @@
 	padding-left: -100px;
 }
 
-ul{
+ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -24,7 +24,7 @@ ul{
 }
 
 
-.menu li a.icon-alternativas{
+.menu li a.icon-alternativas {
 	background: url("../img/icon-alternativas.png") no-repeat;
 	width: 33px;
 	height: 30px;
@@ -36,7 +36,7 @@ ul{
 
 }
 
-.menu li a.icon-dissertativas{
+.menu li a.icon-dissertativas {
 	background: url("../img/icon-dissertativas.png") no-repeat;
 	width: 33px;
 	height: 35px;
@@ -47,14 +47,18 @@ ul{
 	margin-top: 30px;
 }
 
-.menu img{
+.menu #icon-trenade {
+	background: url("../img/logo-trenade.png") no-repeat;
+	width: 48px;
+	height: 48px;
 	display: block;
+	text-indent: -9000000px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 40%;
 }
 
-.submenu{
+.submenu {
 	padding-top: 30px;
 	height: 100%;
 	position: fixed;
@@ -65,8 +69,16 @@ ul{
 	margin-left: 100px;
 }
 
+.submenu .titulo {
+	font-weight: bold;
+}
 
-.content{
+.submenu .lista {
+	margin-top: 56%;
+}
+
+
+.content {
 	padding-top: 10px;
 	width: 100%;
 	height: 100%;

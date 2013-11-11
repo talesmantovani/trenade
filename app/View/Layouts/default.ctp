@@ -18,15 +18,15 @@
 		
 		<div class="sidebar">
 			<div class="menu">
-				<img src="img/logo-trenade.png">
+				<p id="icon-trenade"></p>
 				<ul>
 					<li><a class="icon-alternativas" href="">Questões alternativas</a></li>
 					<li><a class="icon-dissertativas" href="">Questões dissertativas</a></li>
 				</ul>
 			</div>
 			<div class="submenu">
-			<ul>
-				<li>Questões alternativas</li>
+			<ul class="lista">
+				<li class="titulo">Questões alternativas</li>
 					<ul>
 						<li>
 							<?php
@@ -40,7 +40,7 @@
 							?>
 						</li>
 					</ul>
-				<li>Questões dissertativas</li>
+				<li class="titulo">Questões dissertativas</li>
 					<ul>
 						<li>
 							<?php
