@@ -2,9 +2,9 @@
 <html>
 <head>
 	<?php 
-		//echo $this->Html->css('jquery-ui.css');
-		//echo $this->Html->css('/development-bundle/themes/smoothness/jquery-ui.css');
-		//echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('jquery-ui.css');
+		echo $this->Html->css('/development-bundle/themes/smoothness/jquery-ui.css');
+		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->script('jquery-1.9.1.js');
 		echo $this->Html->script('jquery-ui.js');
 		echo $this->Html->script('trenade.js');
@@ -27,7 +27,33 @@
 			<div class="submenu">
 			<ul>
 				<li>Questões alternativas</li>
+					<ul>
+						<li>
+							<?php
+								echo $this->Html->link(__('Adicionar'), array(
+								'controller' => 'AltQuestions', 'action' => 'add'));
+							?>
+						</li>
+						<li><?php
+								echo $this->Html->link(__('Gerenciar'), array(
+								'controller' => 'AltQuestions', 'action' => 'index'));
+							?>
+						</li>
+					</ul>
 				<li>Questões dissertativas</li>
+					<ul>
+						<li>
+							<?php
+								echo $this->Html->link(__('Adicionar'), array(
+								'controller' => 'TextQuestions', 'action' => 'add'));
+							?>
+						</li>
+						<li><?php
+								echo $this->Html->link(__('Gerenciar'), array(
+								'controller' => 'TextQuestions', 'action' => 'index'));
+							?>
+						</li>
+					</ul>
 			</ul>
 			</div>
 		</div>

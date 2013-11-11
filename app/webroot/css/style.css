@@ -1,26 +1,28 @@
 .wrap{
- padding-left: 300px;
+ 	padding-left: 300px;
 }
 
 .sidebar{
- padding-left: -300px;
+ 	padding-left: -300px;
 }
 
 .menu{
- height: 100%;
- position: fixed;
- top: 0;
- left: 0;
- background-color:#3cad56;
- width: 100px;
- padding-left: -100px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color:#3cad56;
+	width: 100px;
+	padding-left: -100px;
 }
 
 ul{
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	text-align: center;
 }
+
 
 .menu li a.icon-alternativas{
 	background: url("../img/icon-alternativas.png") no-repeat;
@@ -28,6 +30,10 @@ ul{
 	height: 30px;
 	display: block;
 	text-indent: -9000000px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+
 }
 
 .menu li a.icon-dissertativas{
@@ -36,20 +42,38 @@ ul{
 	height: 35px;
 	display: block;
 	text-indent: -9000000px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+}
+
+.menu img{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 40%;
 }
 
 .submenu{
- padding-top: 30px;
- height: 100%;
- position: fixed;
- top: 0;
- left: 0;
- background-color:#e0e2e4;
- width: 200px;
- margin-left: 100px;
+	padding-top: 30px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color:#e0e2e4;
+	width: 200px;
+	margin-left: 100px;
 }
 
+
 .content{
+	padding-top: 10px;
 	width: 100%;
-	background-color: blue;
+	height: 100%;
+
+}
+
+body {
+	margin: 0;
+	padding: 0;
 }
