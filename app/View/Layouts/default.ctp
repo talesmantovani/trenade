@@ -63,6 +63,7 @@
 		</div>
 		<div class="content">
 			<?php echo $this->fetch('content'); ?>
+			<p class="icon-conteudo"></p>
 		</div>
 	</div>
 </body>
