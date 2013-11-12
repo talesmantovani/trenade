@@ -15,7 +15,6 @@
 <body>
 	<div class="wrap">
 		<?php echo $this->Session->flash(); ?>
-		
 		<div class="sidebar">
 			<div class="menu">
 				<p id="icon-trenade"></p>
@@ -62,8 +61,8 @@
 			</div>
 		</div>
 		<div class="content">
-			<?php echo $this->fetch('content'); ?>
 			<p class="icon-conteudo"></p>
+			<?php echo $this->fetch('content'); ?>
 		</div>
 	</div>
 </body>

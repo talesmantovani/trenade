@@ -14,6 +14,7 @@
                 return;
             } else {   
                 $this->Session->setFlash(__('<script> alert("Usuário ou senha inválidos."); </script>', true));
+                $this->request->data = null;
             }
         }
 
