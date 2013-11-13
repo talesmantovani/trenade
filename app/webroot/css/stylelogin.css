@@ -1,6 +1,27 @@
-.header{
+.wrap{
 	position: fixed;
+	height: 100%;
 	width: 100%;
 	background-color: #3cad56;
-	height: 30%;
+}
+
+.fields{
+	/*border: 1px solid black;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 20%;
+}
+
+body{
+	padding: 0;
+}
+
+#registro #senha{
+	font-size: 50%;
+}
+
+label {
+	font-family: lobster;
+	color: white;
 }

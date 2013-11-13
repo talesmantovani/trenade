@@ -8,10 +8,17 @@
 		echo $this->Html->script('jquery-1.9.1.js');
 		echo $this->Html->script('jquery-ui.js');
 		echo $this->Html->script('trenade.js');
+		echo $this->Html->script('jquery.js');
 		echo $this->Html->css('style.css');
 	?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#mostra").click(function(){
+				$("#div").show("slow");
+			});
+		});
+	</script>
 </head>
-
 <body>
 	<div class="wrap">
 		<?php echo $this->Session->flash(); ?>
@@ -19,7 +26,7 @@
 			<div class="menu">
 				<p id="icon-trenade"></p>
 				<ul>
-					<li><a class="icon-alternativas" href="">Questões alternativas</a></li>
+					<li><a id="mostra" class="icon-alternativas" href="">Questões alternativas</a></li>
 					<li><a class="icon-dissertativas" href="">Questões dissertativas</a></li>
 				</ul>
 				<?php echo $this->Html->link(__('Logout'), array(
@@ -27,7 +34,7 @@
 					array('id' => 'icon-logout'));
 				?>
 			</div>
-			<div class="submenu">
+			<div id="div" class="submenu">
 			<ul class="lista">
 				<li class="titulo">Questões alternativas</li>
 					<ul>
@@ -61,7 +68,6 @@
 			</div>
 		</div>
 		<div class="content">
-			<p class="icon-conteudo"></p>
 			<?php echo $this->fetch('content'); ?>
 		</div>
 	</div>

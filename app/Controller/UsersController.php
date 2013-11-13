@@ -7,6 +7,7 @@
 		}
 
         public function login(){
+            $this->layout = 'login';
             if ($this->Auth->login()) {
                 $this->redirect($this->Auth->redirect());
             }
