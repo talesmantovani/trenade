@@ -13,8 +13,8 @@
 	?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#mostra").click(function(){
-				$("#div").show("slow");
+			$(".mostra").click(function(){
+				$("#submenu").show("slow");
 			});
 		});
 	</script>
@@ -26,15 +26,15 @@
 			<div class="menu">
 				<p id="icon-trenade"></p>
 				<ul>
-					<li><a id="mostra" class="icon-alternativas" href="">Questões alternativas</a></li>
-					<li><a class="icon-dissertativas" href="">Questões dissertativas</a></li>
+					<li><a class="icon-alternativas mostra" href="#">Questões alternativas</a></li>
+					<li><a class="icon-dissertativas mostra" href="#">Questões dissertativas</a></li>
 				</ul>
 				<?php echo $this->Html->link(__('Logout'), array(
 					'controller' => 'Users', 'action' => 'logout'),
 					array('id' => 'icon-logout'));
 				?>
 			</div>
-			<div id="div" class="submenu">
+			<div id="submenu" class="submenu">
 			<ul class="lista">
 				<li class="titulo">Questões alternativas</li>
 					<ul>

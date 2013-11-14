@@ -14,23 +14,9 @@
 			echo $this->Html->script('jquery.js');
 			echo $this->Html->css('stylelogin');
 		?>
-		<?php echo $this->Session->flash('auth'); ?>
 	</head>
 	<body>
-		<div class="wrap">
-			<p id="logo-login"></p>
-			<div class="fields">
-				<?php echo $this->Form->create('User');?>
-				<?php 
-					echo $this->Form->input('username', array(
-						'label' => 'Login: ',
-						'type' => 'text'));
-					echo $this->Form->input('password', array(
-					  	'label' => 'Senha: ',
-					  	'id' => ''));
-				?>
-				<?php echo $this->Form->end(__('Entrar')); ?>
-			</div>
-		</div>		
+		<?php echo $this->Session->flash(); ?>
+		<?php echo $this->fetch('content'); ?>
 	</body>
 </html>
