@@ -13,10 +13,16 @@
 	?>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$(".mostra").click(function(){
-				$("#submenu").show("slow");
+			$(".mostraAlt").click(function(){
+				$("#submenuAlt").show();
+				$("#submenuDiss").hide();
+			});
+			$(".mostraDiss").click(function(){
+				$("#submenuDiss").show();
+				$("#submenuAlt").hide();
 			});
 		});
+		
 	</script>
 </head>
 <body>
@@ -26,15 +32,33 @@
 			<div class="menu">
 				<p id="icon-trenade"></p>
 				<ul>
-					<li><a class="icon-alternativas mostra" href="#">Questões alternativas</a></li>
-					<li><a class="icon-dissertativas mostra" href="#">Questões dissertativas</a></li>
+					<li><a class="icon-alternativas mostraAlt" href="#">Questões alternativas</a></li>
+					<li><a class="icon-dissertativas mostraDiss" href="#">Questões dissertativas</a></li>
 				</ul>
 				<?php echo $this->Html->link(__('Logout'), array(
 					'controller' => 'Users', 'action' => 'logout'),
 					array('id' => 'icon-logout'));
 				?>
 			</div>
-			<div id="submenu" class="submenu">
+			<div id="submenuDiss" class="submenu">
+			<ul class="listaDiss">
+				<li class="titulo">Questões dissertativas</li>
+					<ul>
+						<li>
+							<?php
+								echo $this->Html->link(__('Adicionar'), array(
+								'controller' => 'TextQuestions', 'action' => 'add'));
+							?>
+						</li>
+						<li><?php
+								echo $this->Html->link(__('Gerenciar'), array(
+								'controller' => 'TextQuestions', 'action' => 'index'));
+							?>
+						</li>
+					</ul>
+			</ul>
+			</div>
+			<div id="submenuAlt" class="submenu">
 			<ul class="lista">
 				<li class="titulo">Questões alternativas</li>
 					<ul>
@@ -47,20 +71,6 @@
 						<li><?php
 								echo $this->Html->link(__('Gerenciar'), array(
 								'controller' => 'AltQuestions', 'action' => 'index'));
-							?>
-						</li>
-					</ul>
-				<li class="titulo">Questões dissertativas</li>
-					<ul>
-						<li>
-							<?php
-								echo $this->Html->link(__('Adicionar'), array(
-								'controller' => 'TextQuestions', 'action' => 'add'));
-							?>
-						</li>
-						<li><?php
-								echo $this->Html->link(__('Gerenciar'), array(
-								'controller' => 'TextQuestions', 'action' => 'index'));
 							?>
 						</li>
 					</ul>
