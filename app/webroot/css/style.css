@@ -82,7 +82,7 @@ ul {
 	background-color:#e0e2e4;
 	width: 200px;
 	margin-left: 70px;
-	display: none;
+	/*display: none;*/
 }
 
 .submenu .titulo {
@@ -109,6 +109,10 @@ ul {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 15%;
+}
+
+.content{
+	text-align: center;
 }
 
 body {
