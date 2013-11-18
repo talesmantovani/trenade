@@ -1,6 +1,3 @@
-<?php
-	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));
-?>
 
 <h1>Cadastro de Questões Alternativas</h1>
 <?php
@@ -24,7 +21,8 @@
 		'id' => 'course_id'));
 
 	echo $this->Form->input('question_text', array(
-		'label' => 'Enunciado: '));
+		'label' => 'Enunciado: ',
+		'id' => 'question_text'));
 
 	echo $this->Form->input('answerA', array(
 		'label' => 'A): '));

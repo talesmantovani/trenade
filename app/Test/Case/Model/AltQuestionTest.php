@@ -40,5 +40,35 @@ class AltQuestionTest extends CakeTestCase {
 		$this->assertFalse($this->AltQuestion->validates());
 	}
 
+	public function testCategoryIdCannotBeZero(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '0', 'area_id' => '', 'course_id' => '')));
+		$this->assertFalse($this->AltQuestion->verificaCategoria());
+	}
+
+	public function testCategoryIdShouldBeDiferentOfZero(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '1', 'area_id' => '', 'course_id' => '')));
+		$this->assertTrue($this->AltQuestion->verificaCategoria());
+	}
+
+	public function testAreaIdShouldBeDiferentOfZeroIfCategoryIdEqualToTwo(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '2', 'area_id' => '1', 'course_id' => '')));
+		$this->assertTrue($this->AltQuestion->verificaCategoria());
+	}
+
+	public function testAreaIdCannotBeZeroIfCategoryIdEqualToTwo(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '2', 'area_id' => '0', 'course_id' => '')));
+		$this->assertFalse($this->AltQuestion->verificaCategoria());
+	}
+
+	public function testCourseIdShouldBeDiferentOfZeroIfCategoryIdEqualToThree(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '3', 'area_id' => '', 'course_id' => '1')));
+		$this->assertTrue($this->AltQuestion->verificaCategoria());
+	}
+
+	public function testCourseIdCannotBeZeroIfCategoryIdEqualToThree(){
+		$this->AltQuestion->set(array('AltQuestion' => array('category_id' => '3', 'area_id' => '', 'course_id' => '0')));
+		$this->assertFalse($this->AltQuestion->verificaCategoria());
+	}
+
 }
 ?>
