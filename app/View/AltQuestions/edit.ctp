@@ -1,6 +1,5 @@
 <?php 
-	echo $this->Form->create('AltQuestion', array('action' => 'edit')); 
-	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));	
+	echo $this->Form->create('AltQuestion', array('action' => 'edit')); 	
 ?>
 	<fieldset>
 		<legend><?php echo __('Editar Questões Alternativas'); ?></legend>

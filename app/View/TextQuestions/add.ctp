@@ -1,6 +1,5 @@
 <?php 
 	echo $this->Form->create('TextQuestion'); 
-	echo $this->Html->link(__('Voltar para menu'), array('controller' => 'users', 'action' => 'index'));
 ?>
 	<fieldset>
 		<h1>Cadastro de Questões Dissertativas</h1>

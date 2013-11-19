@@ -36,19 +36,19 @@
 		public $validate = array(
 			'category_id'=> array(
 				'required' => array(
-					'rule' => 'verificaCategoria',
+					'rule' => 'verificaIndices',
 					'message' => 'Selecione uma categoria.'
 				)
 			),
 			'area_id'=> array(
 				'required' => array(
-					'rule' => 'verificaCategoria',
+					'rule' => 'verificaIndices',
 					'message' => 'Selecione uma area.'
 				)
 			),
 			'course_id'=> array(
 				'required' => array(
-					'rule' => 'verificaCategoria',
+					'rule' => 'verificaIndices',
 					'message' => 'Selecione um curso.'
 				)
 			),
@@ -87,12 +87,18 @@
 					'rule' => 'notEmpty',
 					'message' => 'Insira o texto da alternativa.'
 				)
+			),
+			'answer_id' => array(
+				'required' => array(
+					'rule' => 'verificaIndices',
+					'message' => 'Insira uma resposta correta.'
+				)
 			)
 		);
 
-		function verificaCategoria(){
+		function verificaIndices(){
 			$valor = $this->data['AltQuestion'];
-			if($valor['category_id'] == '0'){
+			if($valor['category_id'] == '0' || $valor['answer_id'] == '0'){
 				return false;
 			}	
 			if($valor['category_id'] == '2' and $valor['area_id'] == '0'){
