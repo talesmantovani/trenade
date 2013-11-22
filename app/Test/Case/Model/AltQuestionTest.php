@@ -3,7 +3,7 @@ App::uses("AltQuestion", "Model");
 
 class AltQuestionTest extends CakeTestCase {
 
-	public $fixtures = array('app.alt_question');
+	//public $fixtures = array('app.alt_question');
 
 	public function setUp() {
 		parent::setUp();

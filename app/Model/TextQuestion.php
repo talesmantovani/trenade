@@ -3,17 +3,35 @@ App::uses('AppModel', 'Model', 'Controller/Component');
 class TextQuestion extends AppModel {
 
 
-	public $validates = array(
+	public $validate = array(
+			'category_id'=> array(
+				'required' => array(
+					'rule' => 'verificaIndices',
+					'message' => 'Selecione uma categoria.'
+				)
+			),
+			'area_id'=> array(
+				'required' => array(
+					'rule' => 'verificaIndices',
+					'message' => 'Selecione uma area.'
+				)
+			),
+			'course_id'=> array(
+				'required' => array(
+					'rule' => 'verificaIndices',
+					'message' => 'Selecione um curso.'
+				)
+			),
 			'question_text' => array(
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
-		        	'message' => 'Digite o registro!'
-	       		)	
-			),
+		        	'message' => 'Insira o enunciado da questão!'
+	       		)
+	    	),
 			'answer_text' => array(
 				'required' => array(
 					'rule' => 'notEmpty',
-					'message' => 'Insira uma resposta para a questão!'
+					'message' => 'Insira uma resposta correta.'
 				)
 			)
 		);
@@ -48,6 +66,21 @@ class TextQuestion extends AppModel {
 			'order' => ''
 		)
 	);
+
+	function verificaIndices(){
+			$valor = $this->data['TextQuestion'];
+			if($valor['category_id'] == '0'){
+				
+				return false;
+			}	
+			if($valor['category_id'] == '2' and $valor['area_id'] == '0'){
+				return false;
+			}
+			if($valor['category_id'] == '3' and $valor['course_id'] == '0'){
+				return false;
+			}
+			return true;
+		}
 
 
 			
