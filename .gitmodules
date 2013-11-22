@@ -1,0 +1,3 @@
+[submodule "Plugin/MeioUpload"]
+	path = Plugin/MeioUpload
+	url = git://github.com/jrbasso/MeioUpload.git
