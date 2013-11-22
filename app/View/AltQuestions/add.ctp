@@ -3,12 +3,14 @@
 <?php
 
 	echo $this->Form->create('AltQuestion', array(
-		'action' => 'add'));
+		'action' => 'add', 'type' => 'file'));
 	
 	echo $this->Form->input('category_id', array(
 		'label' => 'Categoria: ', 
 		'onchange' => 'check(this);', 
 		'id' => 'category_id'));
+
+	echo $this->Form->input('User.photo', array('type' => 'file'));
 
 	echo $this->Form->input('area_id', array(
 		'label' => 'Área: ', 

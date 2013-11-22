@@ -1,6 +1,10 @@
 <?php
 	class AltQuestion extends AppModel{
-	
+		public $actsAs = array(
+	        'Upload.Upload' => array(
+	            'foto'
+	        )
+    	);
 
 		public $belongsTo = array(
 		'User' => array(

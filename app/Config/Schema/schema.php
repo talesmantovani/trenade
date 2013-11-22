@@ -15,6 +15,7 @@ class AppSchema extends CakeSchema {
 		'question_text' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'area_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'course_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'foto' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answer_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'answerA' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'answerB' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
