@@ -7,6 +7,8 @@
 		'label' => 'Registro do professor: ', 'type' => 'text'));
 	echo $this->Form->input('email', array(
 		'label' => 'E-mail: '));
+	echo $this->Form->input('teacher', array(
+		'label' => 'Professor: '));
 	echo $this->Form->input('password', array(
 		'label' => 'Senha: '));
 	echo $this->Form->input('confirm_password', array(

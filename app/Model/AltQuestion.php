@@ -1,8 +1,18 @@
 <?php
 	class AltQuestion extends AppModel{
+		
 		public $actsAs = array(
 	        'Upload.Upload' => array(
-	            'foto'
+	            'foto' => array(
+	            	'fields' => array(
+	            		'dir' => 'foto_dir'
+	            	),
+	            	'thumbnailSizes' => array(
+	                    'xvga' => '1024x768',
+	                    'vga' => '640x480',
+	                    'thumb' => '80x80'
+                	)
+	            )	
 	        )
     	);
 
