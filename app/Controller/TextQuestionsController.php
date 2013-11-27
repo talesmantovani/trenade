@@ -34,13 +34,13 @@ class TextQuestionsController extends AppController {
         $this->set('courses', array('[Selecione]') + $this->TextQuestion->Course->find('list'));
 
 		if ($this->request->is('post')) {
-			//$this->TextQuestion->create();
 			$this->request->data['TextQuestion']['user_id'] = $this->Auth->user('id');
 			if ($this->TextQuestion->save($this->request->data)) {
 				$this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso!"); </script>', true));
 				$this->redirect(array('action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('<script> alert("Não pode ser salvo"); </script>', true));
+				$this->redirect(array('action' => 'add'));
 			}
 		}
 		

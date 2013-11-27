@@ -27,13 +27,13 @@
         $this->set('answers', array('[Selecione]') + $this->Answer->find('list'));
 
 			if ($this->request->is('post')) {
-            //$this->AltQuestion->create();
                 $this->request->data['AltQuestion']['user_id'] = $this->Auth->user('id');
                 if ($this->AltQuestion->save($this->request->data)) {
                     $this->Session->setFlash(__('<script> alert("Questão adicionada com sucesso!"); </script>', true));
                     $this->redirect(array('action' => 'add'));
                 } else {
                    $this->Session->setFlash(__('<script> alert("Não pode ser salvo"); </script>',true));
+                   $this->redirect(array('action' => 'add'));
                 }
             }
 
