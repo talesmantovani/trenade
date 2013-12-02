@@ -19,8 +19,10 @@
 			'id' => 'course_id',
 			'disabled'));
 		
-		echo $this->Form->input('AltQuestion.foto_dir', array('type' => 'hidden'));
-		echo $this->Html->image('AltQuestion.foto', array('type' => 'file'));
+		echo $this->Form->input('foto', array('type' => 'file'));
+	
+		echo $this->Form->input('foto_dir', array('type' => 'hidden'));
+		echo $this->Html->image("../files/alt_question/foto/{$this->data['AltQuestion']['foto_dir']}/{$this->data['AltQuestion']['foto']}");
 		
 		echo $this->Form->input('question_text', array(
 		'label' => 'Enunciado: '));
