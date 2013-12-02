@@ -7,10 +7,10 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o registro!'
-	       		),
+	       		)/*,
 	       		'numeric' => array(
 	       			'rule' => 'numeric',
-	       			'message' => 'Apenas números')
+	       			'message' => 'Apenas números') */
 
 	    	),
 
@@ -18,11 +18,11 @@
 		        'required' => array(
 		        	'rule' => array('notEmpty'),
 		        	'message' => 'Digite o nome!'
-	       		),
+	       		)/*,
 	       		'alphanumeric' => array(
 	       			'rule' => 'alphaNumeric',
 	       			'message' => 'Somente letras e números.'
-	       		)
+	       		)*/
 	    	),
 
 	    	'email' => array(
