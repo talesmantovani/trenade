@@ -5,7 +5,7 @@
             $this->User->recursive = 0;
             $this->set('users', $this->paginate());
 		}
-
+        /*
         public function login(){
             $this->layout = 'login';
             if ($this->Auth->login()) {
@@ -15,6 +15,27 @@
                 return;
             } else {   
                 $this->Session->setFlash(__('<script> alert("Usuário ou senha inválidos."); </script>', true));
+                $this->request->data = null;
+            }
+        }
+        */
+        public function login() {
+            $this->layout = 'login';
+            if ($this->Auth->login()) {
+                if ($this->Auth->user('teacher')){
+                    $this->redirect(array('controller' => 'teachers', 'action' => 'index'));  
+                }
+                else {
+                    return;
+                }
+            }
+
+            elseif (empty($this->data)) {
+                return;
+            }
+
+            else {
+                $this->Session->setFlash(__('<script> alert("Registro ou senha inválidos, tente novamente."); </script>', true));
                 $this->request->data = null;
             }
         }
