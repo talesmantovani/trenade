@@ -49,7 +49,6 @@
             //$this->Auth->allow('add');
         }
 
-
 		public function add() {
         if ($this->request->is('post')) {
             $this->User->create();

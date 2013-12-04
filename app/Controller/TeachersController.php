@@ -21,8 +21,5 @@ class AdministratorsController extends AppController {
         $this->set(compact(array('users')));
         
     }
-
-    
-
 }
 ?>

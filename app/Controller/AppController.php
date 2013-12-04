@@ -45,8 +45,25 @@ class AppController extends Controller {
                 'action' => 'login'),
         )
     );
-
+    /*
     function beforeFilter() {
         $this->Auth->allow('add');
+    }
+    */
+    var $permissoes = array(
+        'users' => array('logout' => true),
+        'exams' => array('index' => true)
+    );
+
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $estaNaLogin = ($this->request->params['controller'] == 'users' AND $this->request->params['action'] == 'login');
+        $eProfessor = $this->Auth->user('teacher');
+        $alunoTemPermissao = isset($this->permissoes[$this->request->params['controller']][$this->request->params['action']]);
+
+        if (!$estaNaLogin AND !$eProfessor AND !$alunoTemPermissao) {
+            $this->Session->setFlash(__('<script> alert("Permissão negada."); </script>', true));
+            $this->redirect(array('controller' => 'users', 'action' => 'index'));
+        }
     }
 }
