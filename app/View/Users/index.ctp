@@ -1,0 +1,1 @@
+<?php echo $this->Html->link (__('Alterar Senha'), array('controller' => 'users', 'action' => 'change_pass')) ?>

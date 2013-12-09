@@ -5,11 +5,17 @@
             $this->User->recursive = 0;
             $this->set('users', $this->paginate());
 		}
-        /*
+        
         public function login(){
             $this->layout = 'login';
             if ($this->Auth->login()) {
-                $this->redirect($this->Auth->redirect());
+                if ($this->Auth->user('teacher')) {
+                    $this->redirect(array('controller' => 'users', 'action' => 'index'));   
+                }
+                else {
+                    $this->redirect(array('controller' => 'exams', 'action' => 'index'));
+                }
+                
             }
             elseif (empty($this->data)) {
                 return;
@@ -18,27 +24,37 @@
                 $this->request->data = null;
             }
         }
-        */
-        public function login() {
-            $this->layout = 'login';
-            if ($this->Auth->login()) {
-                if ($this->Auth->user('teacher')){
-                    $this->redirect(array('controller' => 'teachers', 'action' => 'index'));  
-                }
-                else {
-                    return;
-                }
-            }
 
-            elseif (empty($this->data)) {
-                return;
-            }
+        function edit ($id){
 
-            else {
-                $this->Session->setFlash(__('<script> alert("Registro ou senha inválidos, tente novamente."); </script>', true));
-                $this->request->data = null;
-            }
+           if (empty($this->data)) {
+               $this->data = $this->User->find('first', array('conditions' => array('id' => $id)));
+               
+           }
+           else{
+                   $this->User->save($this->data);
+                   $this->redirect('manager');
+           }
+
         }
+
+   public function change_pass() {
+       $this->User->recursive = 0;
+
+       if (!empty($this->data)) {
+
+           $this->User->id = $this->Session->read('Auth.User.id');
+
+           if ($this->User->save($this->data)) {
+               $this->Session->setFlash(__('<script> alert("Senha alterada com sucesso!"); </script>', true));
+               $this->redirect(array('controller' => 'users', 'action' => 'logout'));
+           } else {
+               $this->Session->setFlash(__('<script> alert("As duas senhas não conferem! Tente novamente."); </script>', true));
+           }
+       }
+
+       $this->data = $this->User->read(null, $this->Session->read('Auth.User.id'));
+   }
 
         public function logout() {
             $this->redirect($this->Auth->logout());
