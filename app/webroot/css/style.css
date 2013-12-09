@@ -1,5 +1,5 @@
 .wrap {
- 	padding-left: 270px;
+ 	padding-left: 280px;
 }
 
 .submenu .listaDiss{
@@ -27,6 +27,27 @@ ul {
 	text-align: center;
 }
 
+.menu li a.icon-estudo {
+	background: url("../img/icon-estudo.png") no-repeat;
+	width: 33px;
+	height: 35px;
+	display: block;
+	text-indent: -9000000px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+}
+
+.menu li a.icon-simulado {
+	background: url("../img/icon-simulado.png") no-repeat;
+	width: 33px;
+	height: 35px;
+	display: block;
+	text-indent: -9000000px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+}
 
 .menu li a.icon-alternativas {
 	background: url("../img/icon-alternativas.png") no-repeat;
@@ -112,7 +133,7 @@ ul {
 }
 
 .content{
-	text-align: center;
+	/*text-align: center;*/
 }
 
 #category_id{

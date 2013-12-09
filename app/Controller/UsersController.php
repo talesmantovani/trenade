@@ -13,7 +13,7 @@
                     $this->redirect(array('controller' => 'users', 'action' => 'index'));   
                 }
                 else {
-                    $this->redirect(array('controller' => 'exams', 'action' => 'index'));
+                    $this->redirect(array('controller' => 'exams', 'action' => 'default_student'));
                 }
                 
             }
@@ -47,7 +47,7 @@
 
            if ($this->User->save($this->data)) {
                $this->Session->setFlash(__('<script> alert("Senha alterada com sucesso!"); </script>', true));
-               $this->redirect(array('controller' => 'users', 'action' => 'logout'));
+               $this->redirect(array('controller' => 'users', 'action' => 'index'));
            } else {
                $this->Session->setFlash(__('<script> alert("As duas senhas não conferem! Tente novamente."); </script>', true));
            }
