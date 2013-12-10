@@ -8,10 +8,10 @@
 	            		'dir' => 'foto_dir'
 	            	),
 	            	'thumbnailSizes' => array(
-	                    'xvga' => '1024x768',
-	                    'vga' => '640x480',
+	                    'big' => '260x200',
+                    	'small' => '120x120',
 	                    'thumb' => '80x80'
-                	)
+                	),
 	            )	
 	        )
     	);
@@ -54,6 +54,10 @@
 					'message' => 'Selecione uma categoria.'
 				)
 			),
+			'foto' => array(
+		        'rule' => array('isValidExtension', array('pdf', 'png', 'jpg', 'jpeg')),
+		        'message' => 'A imagem deve ter formato pdf, png, jpg ou jpeg.'
+		    ),
 			'area_id'=> array(
 				'required' => array(
 					'rule' => 'verificaIndices',
