@@ -10,10 +10,6 @@
 		'onchange' => 'check(this);', 
 		'id' => 'category_id'));
 
-	echo $this->Form->input('foto', array('type' => 'file'));
-	
-	echo $this->Form->input('foto_dir', array('type' => 'hidden'));
-
 	echo $this->Form->input('area_id', array(
 		'label' => 'Área: ', 
 		'disabled', 

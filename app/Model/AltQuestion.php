@@ -1,20 +1,5 @@
 <?php
 	class AltQuestion extends AppModel{
-		
-		public $actsAs = array(
-	        'Upload.Upload' => array(
-	            'foto' => array(
-	            	'fields' => array(
-	            		'dir' => 'foto_dir'
-	            	),
-	            	'thumbnailSizes' => array(
-	                    'big' => '260x200',
-                    	'small' => '120x120',
-	                    'thumb' => '80x80'
-                	),
-	            )	
-	        )
-    	);
 
 		public $belongsTo = array(
 		'User' => array(
@@ -54,10 +39,6 @@
 					'message' => 'Selecione uma categoria.'
 				)
 			),
-			'foto' => array(
-		        'rule' => array('isValidExtension', array('pdf', 'png', 'jpg', 'jpeg')),
-		        'message' => 'A imagem deve ter formato pdf, png, jpg ou jpeg.'
-		    ),
 			'area_id'=> array(
 				'required' => array(
 					'rule' => 'verificaIndices',
