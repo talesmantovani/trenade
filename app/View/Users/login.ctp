@@ -1,15 +1,33 @@
+<?php
+	
+	$entrar = array(
+    'label' => 'Entrar',
+    'div' => array(
+        'class' => 'btn_login',
+    ));
+
+    $input_login = array(
+    	'placeholder' => 'Login',
+    	'type' => 'text',
+    	'class' => 'input_login');
+
+    $input_password = array(
+    	'placeholder' => 'Senha',
+    	'type' => 'password',
+    	'id' => '',
+    	'class' => 'input_login');
+    
+?>
+
 <div class="wrap">
 	<p id="logo-login"></p>
 	<div class="fields">
 		<?php echo $this->Form->create('User');?>
 		<?php 
-			echo $this->Form->input('username', array(
-				'label' => 'Login: ',
-				'type' => 'text'));
-			echo $this->Form->input('password', array(
-			  	'label' => 'Senha: ',
-			  	'id' => ''));
+			echo $this->Form->input('username', $input_login);
+			echo $this->Form->input('password', $input_password);
 		?>
-		<?php echo $this->Form->end(__('Entrar')); ?>
+
+		<?php echo $this->Form->end($entrar); ?>
 	</div>
 </div>
