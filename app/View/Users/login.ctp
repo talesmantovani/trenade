@@ -2,9 +2,9 @@
 	
 	$entrar = array(
     'label' => 'Entrar',
-    'div' => array(
-        'class' => 'btn_login',
-    ));
+    
+        'class' => 'btn btn-large btn-block  btn-success',
+    );
 
     $input_login = array(
     	'placeholder' => 'Login',
