@@ -1,7 +1,7 @@
+
 .wrap{
-	position: fixed;
-	height: 100%;
-	width: 100%;
+	
+	margin:0 auto;
 		
 	background: rgb(83,234,78); /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -38,9 +38,6 @@
 	margin-left: auto;
 }
 
-body{
-	padding: 0;
-}
 
 #registro #senha{
 	font-size: 50%;
